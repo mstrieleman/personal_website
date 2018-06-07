@@ -4,6 +4,10 @@
   "description": "A personal website for myself. It will display projects, resume, links to social media, and other various things.",
   "main": "index.js",
   "scripts": {
+    "start": "node .",
+    "watch": "run-p bundle:watch",
+    "bundle": "browserify client/index.js -t babelify -o server/public/bundle.js",
+    "bundle:watch": "watchify client/index.js -vd -t babelify -o server/public/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
